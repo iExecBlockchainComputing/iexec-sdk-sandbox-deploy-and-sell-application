@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iExec</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>Network</h2>
+      <div class="container">
+        <span id="network">Not connected</span>
+      </div>
+      <hr />
+      <h2>Wallet</h2>
+      <div class="container">
+        <label for="address">Address: </label><span id="address" />
+      </div>
+      <div class="container">
+        <label for="rlc-wallet">RLC wallet: </label><span id="rlc-wallet" />
+      </div>
+      <div class="container">
+        <label for="native-wallet">Native wallet: </label
+        ><span id="native-wallet" />
+      </div>
+      <hr />
+      <h2>Account</h2>
+    </div>
+    <div class="container">
+      <label for="account">User account: </label><span id="account" />
+    </div>
+    <div class="container">
+      <div>
+        <label for="account-deposit-input">Amount</label>
+        <input
+          id="account-deposit-input"
+          type="number"
+          value="100"
+          min="1"
+          placeholder="nRLC to deposit"
+        />
+        <button id="account-deposit-button" disabled>DEPOSIT</button>
+      </div>
+      <label id="account-deposit-error" class="error"></label>
+    </div>
+    <div class="container">
+      <div>
+        <label for="account-withdraw-input">Amount</label>
+        <input
+          id="account-withdraw-input"
+          type="number"
+          value="100"
+          min="1"
+          placeholder="nRLC to withdraw"
+        />
+        <button id="account-withdraw-button" disabled>WITHDRAW</button>
+      </div>
+      <label id="account-withdraw-error" class="error"></label>
+    </div>
+    <hr />
+    <h2>Apps</h2>
+    <div class="container">
+      <button id="apps-count-button" disabled>COUNT USER APPS</button>
+      <label id="apps-count-error" class="error"></label>
+      <div id="apps-count-output"></div>
+    </div>
+    <div class="container">
+      <div>
+        <label for="apps-index-input">App index</label>
+        <input
+          id="apps-index-input"
+          type="number"
+          value="0"
+          min="0"
+          placeholder="App index"
+        />
+        <button id="apps-showindex-button" disabled>SHOW USER APP</button>
+      </div>
+      <label id="apps-showindex-error" class="error"></label>
+      <div class="scrollable" id="apps-showindex-output"></div>
+    </div>
+    <div class="container">
+      <div>
+        <label for="apps-address-input">App address</label>
+        <input
+          id="apps-address-input"
+          type="text"
+          value="hello-world.apps.iexec.eth"
+          placeholder="App address"
+        />
+        <button id="apps-show-button" disabled>SHOW APP</button>
+      </div>
+      <label id="apps-show-error" class="error"></label>
+      <div class="scrollable" id="apps-details-output"></div>
+    </div>
+    <hr />
+    <h2>Deploy app</h2>
+    <div class="container">
+      <div>
+        <div>
+          <label for="apps-deployname-input">App name</label>
+          <input
+            id="apps-deployname-input"
+            type="text"
+            value="hello-world"
+            placeholder="App name"
+          />
+        </div>
+        <div>
+          <label for="apps-deploymultiaddr-input">App image</label>
+          <input
+            id="apps-deploymultiaddr-input"
+            type="text"
+            value="docker.io/iexechub/python-hello-world:1.0.0"
+            placeholder="App multiaddr"
+          />
+        </div>
+        <div>
+          <label for="apps-deploychecksum-input">App checksum</label>
+          <input
+            id="apps-deploychecksum-input"
+            type="text"
+            value="0xa28d8ae83ae586b4c8addd60413a8302798891411a8f87b5f0987050d0d73816"
+            placeholder="App checksum"
+          />
+        </div>
+        <button id="apps-deploy-button" disabled>DEPLOY APP</button>
+      </div>
+      <label id="apps-deploy-error" class="error"></label>
+      <div id="apps-deploy-output"></div>
+    </div>
+    <hr />
+    <h2>Sell app</h2>
+    <div class="container">
+      <div>
+        <div>
+          <label for="sell-appaddress-input">App address</label>
+          <input
+            id="sell-appaddress-input"
+            type="text"
+            value=""
+            placeholder="App address"
+          />
+        </div>
+        <div>
+          <label for="sell-appprice-input">Price</label>
+          <input
+            id="sell-appprice-input"
+            type="number"
+            value="1"
+            min="0"
+            placeholder="Price"
+          />
+        </div>
+        <div>
+          <label for="sell-volume-input">Volume</label>
+          <input
+            id="sell-volume-input"
+            type="number"
+            value="10"
+            min="1"
+            placeholder="Volume"
+          />
+        </div>
+        <button id="sell-publish-button" disabled>PUBLISH SELL ORDER</button>
+      </div>
+      <label id="sell-publish-error" class="error"></label>
+      <div id="sell-publish-output"></div>
+    </div>
+    <div class="container">
+      <div>
+        <label for="sell-unpublishhash-input">Order hash</label>
+        <input
+          id="sell-unpublishhash-input"
+          type="text"
+          value=""
+          placeholder="Order hash"
+        />
+        <button id="sell-unpublish-button" disabled>UNPUBLISH ORDER</button>
+      </div>
+      <label id="sell-unpublish-error" class="error"></label>
+      <div id="sell-unpublish-output"></div>
+    </div>
+    <div class="container">
+      <div>
+        <label for="sell-cancelhash-input">Order hash</label>
+        <input
+          id="sell-cancelhash-input"
+          type="text"
+          value=""
+          placeholder="Order hash"
+        />
+        <button id="sell-cancel-button" disabled>CANCEL ORDER</button>
+      </div>
+      <label id="sell-cancel-error" class="error"></label>
+      <div id="sell-cancel-output"></div>
+    </div>
+    <hr />
+    <h2>Orderbook</h2>
+    <div class="container">
+      <div>
+        <label for="orderbook-appaddress-input">App address</label>
+        <input
+          hash
+          id="orderbook-appaddress-input"
+          type="text"
+          value="hello-world.apps.iexec.eth"
+          placeholder="App address"
+        />
+        <button id="orderbook-show-button" disabled>SHOW APP ORDERBOOK</button>
+      </div>
+      <label id="orderbook-show-error" class="error"></label>
+      <div class="scrollable" id="orderbook-show-output"></div>
+    </div>
+    <hr />
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
